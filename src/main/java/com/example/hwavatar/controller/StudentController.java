@@ -23,7 +23,7 @@ public class StudentController {
         return studentService.add(request.getName(), request.getAge());
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/all")
     public List<Student> getAll() {
         return studentService.getAll();
     }
@@ -36,5 +36,20 @@ public class StudentController {
     @DeleteMapping
     public Student delete(long id) {
         return studentService.delete(id);
+    }
+
+    @GetMapping("/count")
+    public long getCount() {
+        return studentService.getCount();
+    }
+
+    @GetMapping("/average-age")
+    public double getAverageAge() {
+        return studentService.getAverageAge();
+    }
+
+    @GetMapping("/last-five")
+    public List<Student> getLastFiveStudent() {
+        return studentService.getLastFiveStudent();
     }
 }

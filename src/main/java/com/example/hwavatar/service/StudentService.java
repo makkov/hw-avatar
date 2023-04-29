@@ -53,4 +53,16 @@ public class StudentService {
         studentRepository.delete(studentForDelete);
         return studentForDelete;
     }
+
+    public long getCount() {
+        return studentRepository.count();
+    }
+
+    public double getAverageAge() {
+        return studentRepository.getAverageAge();
+    }
+
+    public List<Student> getLastFiveStudent() {
+        return studentRepository.getLastFiveStudentsById();
+    }
 }
