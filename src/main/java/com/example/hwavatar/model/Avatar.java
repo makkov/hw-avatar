@@ -1,5 +1,7 @@
 package com.example.hwavatar.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,6 +21,8 @@ public class Avatar {
 
     private String mediaType;
 
+//    можно раскомментировать для того, чтобы не отображался массив картинки как файла
+//    @JsonIgnore
     private byte[] data;
 
     @OneToOne
