@@ -78,4 +78,14 @@ public class StudentController {
         studentService.task4Par();
         return 0;
     }
+
+    @GetMapping("/print-all")
+    public void printAll() {
+        studentService.printAll();
+    }
+
+    @GetMapping("/print-all-sync")
+    public void printAllSync() {
+        studentService.printAllSync();
+    }
 }
