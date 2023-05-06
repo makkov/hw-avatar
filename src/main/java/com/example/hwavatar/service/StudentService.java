@@ -3,6 +3,8 @@ package com.example.hwavatar.service;
 
 import com.example.hwavatar.model.Student;
 import com.example.hwavatar.repository.StudentRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +12,8 @@ import java.util.Optional;
 
 @Service
 public class StudentService {
+
+    private final Logger logger = LoggerFactory.getLogger(StudentService.class);
 
     private final StudentRepository studentRepository;
 
@@ -55,6 +59,7 @@ public class StudentService {
     }
 
     public long getCount() {
+        logger.info("Was invoked method StudentService::getCount");
         return studentRepository.count();
     }
 
