@@ -4,6 +4,8 @@ import com.example.hwavatar.model.Student;
 import com.example.hwavatar.model.StudentCreationRequest;
 import com.example.hwavatar.model.StudentUpdatingRequest;
 import com.example.hwavatar.service.StudentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,6 +13,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/student")
 public class StudentController {
+
+    private final Logger logger = LoggerFactory.getLogger(StudentController.class);
 
     private final StudentService studentService;
 
@@ -51,5 +55,27 @@ public class StudentController {
     @GetMapping("/last-five")
     public List<Student> getLastFiveStudent() {
         return studentService.getLastFiveStudent();
+    }
+
+    @GetMapping("/task-1")
+    public List<String> task1() {
+        return studentService.getSortStudent();
+    }
+
+    @GetMapping("/task-2")
+    public Double task2() {
+        return studentService.getAllAvgAge();
+    }
+
+    @GetMapping("/task-3")
+    public String task3() {
+        return studentService.getLongestNameFaculty();
+    }
+
+    @GetMapping("/task-4")
+    public Integer task4() {
+        studentService.task4();
+        studentService.task4Par();
+        return 0;
     }
 }
